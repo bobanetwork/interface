@@ -1,6 +1,8 @@
 import '@reach/dialog/styles.css'
 import 'inter-ui'
 import 'polyfills'
+import 'utils/logger/wrap/fetch'
+import 'utils/logger/wrap/send'
 import 'components/analytics'
 
 import { ApolloProvider } from '@apollo/client'
@@ -15,6 +17,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 import { isSentryEnabled } from 'utils/env'
+import { setTimingsService } from 'utils/logger/service'
 
 import Web3Provider from './components/Web3Provider'
 import { LanguageProvider } from './i18n'
@@ -39,6 +42,15 @@ if (isSentryEnabled()) {
     release: process.env.REACT_APP_GIT_COMMIT_HASH,
   })
 }
+
+setTimingsService({
+  async send(measures) {
+    const measure = measures[measures.length - 1]
+    console.groupCollapsed(`${measure.name} took ${measure.duration}ms`)
+    console.table(measures.slice(0, -1), ['name', 'startTime', 'duration'])
+    console.groupEnd()
+  },
+})
 
 function Updaters() {
   return (
