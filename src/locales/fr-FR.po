@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: uniswap-interface\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-02-17 00:17\n"
+"PO-Revision-Date: 2023-02-26 17:04\n"
 "Last-Translator: \n"
 "Language: fr_FR\n"
 "Language-Team: French\n"
@@ -492,6 +492,7 @@ msgstr "Collecter des frais"
 msgid "Collecting fees will withdraw currently available fees for you."
 msgstr "Les frais de perception retireront les frais actuellement disponibles pour vous."
 
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/collection/TransactionCompleteModal.tsx
 msgid "Complete!"
 msgstr "Terminé !"
@@ -530,6 +531,7 @@ msgstr ""
 msgid "Connect"
 msgstr "Connecter"
 
+#: src/nft/pages/profile/profile.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidityV2/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -567,6 +569,7 @@ msgstr "Connecter le portefeuille"
 msgid "Connected with"
 msgstr "Connecté avec"
 
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/profile/list/Modal/BelowFloorWarningModal.tsx
 msgid "Continue"
 msgstr "Continuer"
@@ -1122,7 +1125,7 @@ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "MAX"
-msgstr ""
+msgstr "MAX"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
@@ -1155,7 +1158,7 @@ msgstr ""
 
 #: src/nft/components/profile/list/RoyaltyTooltip.tsx
 msgid "Max fees"
-msgstr ""
+msgstr "Frais Max"
 
 #: src/pages/Pool/PositionPage.tsx
 msgid "Max price"
@@ -1217,7 +1220,7 @@ msgstr "Minimum reçu"
 
 #: src/components/Tokens/TokenDetails/PriceChart.tsx
 msgid "Missing chart data"
-msgstr ""
+msgstr "Données graphiques manquantes"
 
 #: src/lib/hooks/swap/useSwapCallback.tsx
 msgid "Missing dependencies"
@@ -1241,7 +1244,7 @@ msgstr "En savoir plus"
 
 #: src/nft/components/profile/list/ListPage.tsx
 msgid "My NFTs"
-msgstr ""
+msgstr "Mes NFTs"
 
 #: src/nft/components/profile/list/NFTListingsGrid.tsx
 msgid "NFT"
@@ -1286,6 +1289,10 @@ msgstr "Pas de données"
 #: src/state/governance/hooks.ts
 msgid "No description."
 msgstr "Aucune description."
+
+#: src/nft/pages/profile/profile.tsx
+msgid "No items to display"
+msgstr ""
 
 #: src/pages/Pool/v2.tsx
 msgid "No liquidity found."
@@ -1372,6 +1379,10 @@ msgstr "Propriétaire"
 msgid "Page not found!"
 msgstr "Page introuvable !"
 
+#: src/nft/components/bag/profile/ListingButton.tsx
+msgid "Paused"
+msgstr "En pause"
+
 #: src/nft/components/bag/BagFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
@@ -1388,6 +1399,7 @@ msgid "Pay with"
 msgstr "Régler avec"
 
 #: src/components/WalletDropdown/DefaultMenu.tsx
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/pages/Vote/styled.tsx
 msgid "Pending"
 msgstr "En attente"
@@ -1494,6 +1506,7 @@ msgid "Privacy Policy"
 msgstr ""
 
 #: src/nft/components/bag/BagFooter.tsx
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/profile/list/Modal/ContentRow.tsx
 msgid "Proceed in wallet"
 msgstr ""
@@ -1854,7 +1867,6 @@ msgstr "Approvisionnement {0} {1} et {2} {3}"
 
 #: src/components/AccountDetailsV2/TransactionBody.tsx
 #: src/components/NavBar/index.tsx
-#: src/components/Tokens/TokenDetails/MobileBalanceSummaryFooter.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -2144,6 +2156,10 @@ msgstr "Token de transfert"
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
 msgstr "Réessayez"
+
+#: src/nft/components/bag/profile/ListingButton.tsx
+msgid "Try again"
+msgstr "Réessayer"
 
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
@@ -2672,6 +2688,7 @@ msgstr ""
 #: src/components/ErrorBoundary/index.tsx
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
+#: src/components/Tokens/TokenDetails/MobileBalanceSummaryFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
 msgid "{0}"
 msgstr "{0}"

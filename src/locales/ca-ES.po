@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: uniswap-interface\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2023-02-17 00:17\n"
+"PO-Revision-Date: 2023-02-22 18:05\n"
 "Last-Translator: \n"
 "Language: ca_ES\n"
 "Language-Team: Catalan\n"
@@ -492,6 +492,7 @@ msgstr "Cobrament de taxes"
 msgid "Collecting fees will withdraw currently available fees for you."
 msgstr "Les taxes de cobrament us retiraran les taxes disponibles actualment."
 
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/collection/TransactionCompleteModal.tsx
 msgid "Complete!"
 msgstr ""
@@ -530,6 +531,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
+#: src/nft/pages/profile/profile.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidityV2/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -567,6 +569,7 @@ msgstr "Connecteu la cartera"
 msgid "Connected with"
 msgstr ""
 
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/profile/list/Modal/BelowFloorWarningModal.tsx
 msgid "Continue"
 msgstr ""
@@ -1287,6 +1290,10 @@ msgstr "No hi ha informació"
 msgid "No description."
 msgstr "Sense descripció."
 
+#: src/nft/pages/profile/profile.tsx
+msgid "No items to display"
+msgstr ""
+
 #: src/pages/Pool/v2.tsx
 msgid "No liquidity found."
 msgstr "No s'ha trobat cap liquiditat."
@@ -1372,6 +1379,10 @@ msgstr "Propietari"
 msgid "Page not found!"
 msgstr ""
 
+#: src/nft/components/bag/profile/ListingButton.tsx
+msgid "Paused"
+msgstr ""
+
 #: src/nft/components/bag/BagFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
@@ -1388,6 +1399,7 @@ msgid "Pay with"
 msgstr ""
 
 #: src/components/WalletDropdown/DefaultMenu.tsx
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/pages/Vote/styled.tsx
 msgid "Pending"
 msgstr ""
@@ -1494,6 +1506,7 @@ msgid "Privacy Policy"
 msgstr ""
 
 #: src/nft/components/bag/BagFooter.tsx
+#: src/nft/components/bag/profile/ListingButton.tsx
 #: src/nft/components/profile/list/Modal/ContentRow.tsx
 msgid "Proceed in wallet"
 msgstr ""
@@ -1854,7 +1867,6 @@ msgstr "Subministrant {0} {1} i {2} {3}"
 
 #: src/components/AccountDetailsV2/TransactionBody.tsx
 #: src/components/NavBar/index.tsx
-#: src/components/Tokens/TokenDetails/MobileBalanceSummaryFooter.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -2144,6 +2156,10 @@ msgstr ""
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
 msgstr "Torna-ho a provar"
+
+#: src/nft/components/bag/profile/ListingButton.tsx
+msgid "Try again"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
@@ -2672,6 +2688,7 @@ msgstr ""
 #: src/components/ErrorBoundary/index.tsx
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
+#: src/components/Tokens/TokenDetails/MobileBalanceSummaryFooter.tsx
 #: src/nft/components/bag/BagFooter.tsx
 msgid "{0}"
 msgstr "{0}"
