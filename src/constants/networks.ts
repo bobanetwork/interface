@@ -76,6 +76,7 @@ export const FALLBACK_URLS: { [key in SupportedChainId]: string[] } = {
   [SupportedChainId.BOBA]: [
     // "Safe" URLs
     `https://lightning-replica.boba.network/`,
+    `https://mainnet.boba.network/`,
   ],
   [SupportedChainId.BOBA_GOERLI]: [
     // "Safe" URLs
