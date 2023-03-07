@@ -10,6 +10,7 @@ const BLOCK_EXPLORER_PREFIXES: { [chainId: number]: string } = {
   [SupportedChainId.CELO]: 'https://celoscan.io',
   [SupportedChainId.CELO_ALFAJORES]: 'https://alfajores-blockscout.celo-testnet.org',
   [SupportedChainId.BOBA]: 'https://bobascan.com',
+  [SupportedChainId.BOBA_GOERLI]: 'https://testnet.bobascan.com/',
 }
 
 export enum ExplorerDataType {

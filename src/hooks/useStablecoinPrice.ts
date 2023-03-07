@@ -18,6 +18,7 @@ const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
   [SupportedChainId.POLYGON]: CurrencyAmount.fromRawAmount(USDC_POLYGON, 10_000e6),
   [SupportedChainId.CELO]: CurrencyAmount.fromRawAmount(CUSD_CELO, 10_000e18),
   [SupportedChainId.BOBA]: CurrencyAmount.fromRawAmount(USDC_BOBA, 10_000e6),
+  [SupportedChainId.BOBA_GOERLI]: CurrencyAmount.fromRawAmount(USDC_BOBA, 10_000e6),
 }
 
 /**

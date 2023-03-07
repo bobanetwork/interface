@@ -77,7 +77,8 @@ export default function RadialGradientByChainUpdater(): null {
         backgroundRadialGradientElement.style.background = darkMode ? polygonDarkGradient : polygonLightGradient
         break
       }
-      case SupportedChainId.BOBA: {
+      case SupportedChainId.BOBA:
+      case SupportedChainId.BOBA_GOERLI: {
         setBackground(backgroundResetStyles)
         const bobaLightGradient =
           'radial-gradient(100% 100% at 50% 0%, rgb(210 220 185) 0%, rgb(245 255 220 / 20%) 52.6%, rgba(0, 0, 0, 0) 100%), rgb(255, 255, 255)'

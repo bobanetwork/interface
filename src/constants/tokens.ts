@@ -318,6 +318,14 @@ export const BOBA_BOBA = new Token(
   'Boba Token'
 )
 
+export const BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x4200000000000000000000000000000000000023',
+  18,
+  'BOBA',
+  'Boba Token'
+)
+
 export const USDT_BOBA = new Token(
   SupportedChainId.BOBA,
   '0x5DE1677344D3Cb0D7D465c10b72A8f60699C062d',
@@ -337,6 +345,14 @@ export const DAI_BOBA = new Token(
 export const USDC_BOBA = new Token(
   SupportedChainId.BOBA,
   '0x66a2A913e447d6b4BF33EFbec43aAeF87890FBbc',
+  6,
+  'USDC',
+  'USD Coin'
+)
+
+export const USDC_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x429582bDe1B0E011C48d883354050938f194743F',
   6,
   'USDC',
   'USD Coin'
@@ -515,5 +531,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.CELO_ALFAJORES]: PORTAL_USDC_CELO.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,
     [SupportedChainId.BOBA]: USDC_BOBA.address,
+    [SupportedChainId.BOBA_GOERLI]: USDC_BOBA_GOERLI.address,
   },
 }

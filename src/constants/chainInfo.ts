@@ -203,6 +203,19 @@ const CHAIN_INFO: ChainInfoMap = {
     nativeCurrency: { name: 'Boba Network', symbol: 'BOBA', decimals: 18 },
     defaultListUrl: BOBA_LIST,
   },
+  [SupportedChainId.BOBA_GOERLI]: {
+    networkType: NetworkType.L2,
+    blockWaitMsBeforeWarning: ms`10m`,
+    bridge: 'https://goerli.boba.network',
+    docs: 'https://docs.boba.network/',
+    explorer: 'https://testnet.bobascan.com/',
+    infoLink: 'https://info.uniswap.org/#/boba',
+    label: 'Boba Goerli',
+    logoUrl: bobaLogo,
+    circleLogoUrl: BobaNetworkLogoUrl,
+    nativeCurrency: { name: 'Boba Network', symbol: 'BOBA', decimals: 18 },
+    defaultListUrl: BOBA_LIST,
+  },
 }
 
 export function getChainInfo(chainId: SupportedL1ChainId): L1ChainInfo
