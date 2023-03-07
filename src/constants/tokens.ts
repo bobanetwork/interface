@@ -318,6 +318,14 @@ export const BOBA_BOBA = new Token(
   'Boba Token'
 )
 
+export const BOBA_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x4200000000000000000000000000000000000023',
+  18,
+  'BOBA',
+  'Boba Token'
+)
+
 export const USDT_BOBA = new Token(
   SupportedChainId.BOBA,
   '0x5DE1677344D3Cb0D7D465c10b72A8f60699C062d',
@@ -356,6 +364,31 @@ export const LINK_BOBA = new Token(
   18,
   'LINK',
   'ChainLink Token'
+)
+
+const ETH_BOBA = new Token(SupportedChainId.BOBA, '0x4200000000000000000000000000000000000006', 18, 'ETH', 'Ether')
+
+export const WETH_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+
+export const WETH_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+const ETH_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x4200000000000000000000000000000000000006',
+  18,
+  'ETH',
+  'Ether'
 )
 
 export const UNI: { [chainId: number]: Token } = {
@@ -424,17 +457,17 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
 
   [SupportedChainId.BOBA]: new Token(
     SupportedChainId.BOBA,
-    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+    '0x4200000000000000000000000000000000000006',
     18,
-    'WETH',
-    'Wrapped Ether'
+    'ETH',
+    'Ether'
   ),
   [SupportedChainId.BOBA_GOERLI]: new Token(
     SupportedChainId.BOBA_GOERLI,
-    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+    '0x4200000000000000000000000000000000000006',
     18,
-    'WETH',
-    'Wrapped Ether'
+    'ETH',
+    'Ether'
   ),
 }
 
@@ -453,16 +486,16 @@ function getCeloNativeCurrency(chainId: number) {
   }
 }
 
-export function isBoba(chainId: number): chainId is SupportedChainId.BOBA {
-  return chainId === SupportedChainId.BOBA
+export function isBoba(chainId: number): chainId is SupportedChainId.BOBA | SupportedChainId.BOBA_GOERLI {
+  return chainId === SupportedChainId.BOBA_GOERLI || chainId === SupportedChainId.BOBA
 }
 
 function getBobaNativeCurrency(chainId: number) {
   switch (chainId) {
     case SupportedChainId.BOBA:
-      return BOBA_BOBA
+      return ETH_BOBA
     case SupportedChainId.BOBA_GOERLI:
-      return BOBA_GOERLI
+      return ETH_BOBA_GOERLI
     default:
       throw new Error('Not Boba network')
   }
