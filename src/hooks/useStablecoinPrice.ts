@@ -6,8 +6,15 @@ import { useMemo, useRef } from 'react'
 import { RouterPreference } from 'state/routing/slice'
 import { useRoutingAPITrade } from 'state/routing/useRoutingAPITrade'
 
-import { USDC_BOBA } from '../constants/tokens'
-import { CUSD_CELO, DAI_OPTIMISM, USDC_ARBITRUM, USDC_MAINNET, USDC_POLYGON } from '../constants/tokens'
+import {
+  CUSD_CELO,
+  DAI_OPTIMISM,
+  USDC_ARBITRUM,
+  USDC_BOBA,
+  USDC_BOBA_GOERLI,
+  USDC_MAINNET,
+  USDC_POLYGON,
+} from '../constants/tokens'
 
 // Stablecoin amounts used when calculating spot price for a given currency.
 // The amount is large enough to filter low liquidity pairs.
@@ -18,7 +25,7 @@ const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
   [SupportedChainId.POLYGON]: CurrencyAmount.fromRawAmount(USDC_POLYGON, 10_000e6),
   [SupportedChainId.CELO]: CurrencyAmount.fromRawAmount(CUSD_CELO, 10_000e18),
   [SupportedChainId.BOBA]: CurrencyAmount.fromRawAmount(USDC_BOBA, 10_000e6),
-  [SupportedChainId.BOBA_GOERLI]: CurrencyAmount.fromRawAmount(USDC_BOBA, 10_000e6),
+  [SupportedChainId.BOBA_GOERLI]: CurrencyAmount.fromRawAmount(USDC_BOBA_GOERLI, 10_000e6),
 }
 
 /**

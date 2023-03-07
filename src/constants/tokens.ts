@@ -318,14 +318,6 @@ export const BOBA_BOBA = new Token(
   'Boba Token'
 )
 
-export const BOBA_GOERLI = new Token(
-  SupportedChainId.BOBA_GOERLI,
-  '0x4200000000000000000000000000000000000023',
-  18,
-  'BOBA',
-  'Boba Token'
-)
-
 export const USDT_BOBA = new Token(
   SupportedChainId.BOBA,
   '0x5DE1677344D3Cb0D7D465c10b72A8f60699C062d',
@@ -429,9 +421,17 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'CELO',
     'Celo native asset'
   ),
+
   [SupportedChainId.BOBA]: new Token(
     SupportedChainId.BOBA,
-    '0x4200000000000000000000000000000000000006',
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [SupportedChainId.BOBA_GOERLI]: new Token(
+    SupportedChainId.BOBA_GOERLI,
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
     18,
     'WETH',
     'Wrapped Ether'
@@ -461,6 +461,8 @@ function getBobaNativeCurrency(chainId: number) {
   switch (chainId) {
     case SupportedChainId.BOBA:
       return BOBA_BOBA
+    case SupportedChainId.BOBA_GOERLI:
+      return BOBA_GOERLI
     default:
       throw new Error('Not Boba network')
   }
