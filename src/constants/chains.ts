@@ -63,6 +63,7 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_GOERLI,
+  SupportedChainId.BOBA,
 ]
 
 export const TESTNET_CHAIN_IDS = [

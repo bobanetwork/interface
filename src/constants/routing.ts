@@ -93,15 +93,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     WETH_POLYGON,
   ],
   [SupportedChainId.CELO]: [CUSD_CELO, CEUR_CELO, CMC02_CELO, PORTAL_USDC_CELO, PORTAL_ETH_CELO],
-  [SupportedChainId.BOBA]: [
-    ...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.BOBA],
-    BOBA_BOBA,
-    WBTC_BOBA,
-    USDT_BOBA,
-    DAI_BOBA,
-    USDC_BOBA,
-    LINK_BOBA,
-  ],
+  [SupportedChainId.BOBA]: [BOBA_BOBA, WBTC_BOBA, USDT_BOBA, DAI_BOBA, USDC_BOBA, LINK_BOBA],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
