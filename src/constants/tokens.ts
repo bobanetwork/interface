@@ -441,6 +441,15 @@ export function isBoba(chainId: number): chainId is SupportedChainId.BOBA {
   return chainId === SupportedChainId.BOBA
 }
 
+function getBobaNativeCurrency(chainId: number) {
+  switch (chainId) {
+    case SupportedChainId.BOBA:
+      return BOBA_BOBA
+    default:
+      throw new Error('Not Boba network')
+  }
+}
+
 function isMatic(chainId: number): chainId is SupportedChainId.POLYGON | SupportedChainId.POLYGON_MUMBAI {
   return chainId === SupportedChainId.POLYGON_MUMBAI || chainId === SupportedChainId.POLYGON
 }
@@ -485,6 +494,8 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = new MaticNativeCurrency(chainId)
   } else if (isCelo(chainId)) {
     nativeCurrency = getCeloNativeCurrency(chainId)
+  } else if (isBoba(chainId)) {
+    nativeCurrency = getBobaNativeCurrency(chainId)
   } else {
     nativeCurrency = ExtendedEther.onChain(chainId)
   }
@@ -503,5 +514,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.CELO]: PORTAL_USDC_CELO.address,
     [SupportedChainId.CELO_ALFAJORES]: PORTAL_USDC_CELO.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,
+    [SupportedChainId.BOBA]: USDC_BOBA.address,
   },
 }
