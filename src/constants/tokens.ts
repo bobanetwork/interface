@@ -350,14 +350,6 @@ export const LINK_BOBA = new Token(
   'ChainLink Token'
 )
 
-export const WETH_BOBA = new Token(
-  SupportedChainId.BOBA,
-  '0x4200000000000000000000000000000000000006',
-  18,
-  'ETH',
-  'Ether'
-)
-
 export const UNI: { [chainId: number]: Token } = {
   [SupportedChainId.MAINNET]: new Token(SupportedChainId.MAINNET, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
   [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
