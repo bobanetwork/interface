@@ -663,10 +663,10 @@ export type Query = {
 
 
 export type QueryNftActivityArgs = {
+  after?: InputMaybe<Scalars['String']>;
   chain?: InputMaybe<Chain>;
-  cursor?: InputMaybe<Scalars['String']>;
   filter?: InputMaybe<NftActivityFilterInput>;
-  limit?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -676,11 +676,9 @@ export type QueryNftAssetsArgs = {
   asc?: InputMaybe<Scalars['Boolean']>;
   before?: InputMaybe<Scalars['String']>;
   chain?: InputMaybe<Chain>;
-  cursor?: InputMaybe<Scalars['String']>;
   filter?: InputMaybe<NftAssetsFilterInput>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
-  limit?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<NftAssetSortableField>;
 };
 
@@ -689,20 +687,18 @@ export type QueryNftBalancesArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   chain?: InputMaybe<Chain>;
-  cursor?: InputMaybe<Scalars['String']>;
   filter?: InputMaybe<NftBalancesFilterInput>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
-  limit?: InputMaybe<Scalars['Int']>;
   ownerAddress: Scalars['String'];
 };
 
 
 export type QueryNftCollectionsArgs = {
+  after?: InputMaybe<Scalars['String']>;
   chain?: InputMaybe<Chain>;
-  cursor?: InputMaybe<Scalars['String']>;
   filter?: InputMaybe<NftCollectionsFilterInput>;
-  limit?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -751,9 +747,11 @@ export type QueryTokensArgs = {
 
 
 export type QueryTopCollectionsArgs = {
+  after?: InputMaybe<Scalars['String']>;
   chains?: InputMaybe<Array<Chain>>;
   cursor?: InputMaybe<Scalars['String']>;
   duration?: InputMaybe<HistoryDuration>;
+  first?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<CollectionSortableField>;
 };
@@ -1091,6 +1089,13 @@ export type CollectionQueryVariables = Exact<{
 
 
 export type CollectionQuery = { __typename?: 'Query', nftCollections?: { __typename?: 'NftCollectionConnection', edges: Array<{ __typename?: 'NftCollectionEdge', cursor: string, node: { __typename?: 'NftCollection', collectionId: string, description?: string, discordUrl?: string, homepageUrl?: string, instagramName?: string, isVerified?: boolean, name?: string, numAssets?: number, twitterName?: string, bannerImage?: { __typename?: 'Image', url: string }, image?: { __typename?: 'Image', url: string }, nftContracts?: Array<{ __typename?: 'NftContract', address: string, chain: Chain, name?: string, standard?: NftStandard, symbol?: string, totalSupply?: number }>, traits?: Array<{ __typename?: 'NftCollectionTrait', name?: string, values?: Array<string>, stats?: Array<{ __typename?: 'NftCollectionTraitStats', name?: string, value?: string, assets?: number, listings?: number }> }>, markets?: Array<{ __typename?: 'NftCollectionMarket', owners?: number, floorPrice?: { __typename?: 'TimestampedAmount', currency?: Currency, value: number }, totalVolume?: { __typename?: 'TimestampedAmount', value: number, currency?: Currency }, listings?: { __typename?: 'TimestampedAmount', value: number }, volume?: { __typename?: 'TimestampedAmount', value: number, currency?: Currency }, volumePercentChange?: { __typename?: 'TimestampedAmount', value: number, currency?: Currency }, floorPricePercentChange?: { __typename?: 'TimestampedAmount', value: number, currency?: Currency }, marketplaces?: Array<{ __typename?: 'NftCollectionMarketplace', marketplace?: NftMarketplace, listings?: number, floorPrice?: number }> }> } }>, pageInfo: { __typename?: 'PageInfo', endCursor?: string, hasNextPage?: boolean, hasPreviousPage?: boolean, startCursor?: string } } };
+
+export type CollectionSearchQueryVariables = Exact<{
+  query: Scalars['String'];
+}>;
+
+
+export type CollectionSearchQuery = { __typename?: 'Query', nftCollections?: { __typename?: 'NftCollectionConnection', edges: Array<{ __typename?: 'NftCollectionEdge', cursor: string, node: { __typename?: 'NftCollection', isVerified?: boolean, name?: string, numAssets?: number, image?: { __typename?: 'Image', url: string }, nftContracts?: Array<{ __typename?: 'NftContract', address: string, chain: Chain, name?: string, symbol?: string, totalSupply?: number }>, markets?: Array<{ __typename?: 'NftCollectionMarket', floorPrice?: { __typename?: 'TimestampedAmount', currency?: Currency, value: number } }> } }>, pageInfo: { __typename?: 'PageInfo', endCursor?: string, hasNextPage?: boolean, hasPreviousPage?: boolean, startCursor?: string } } };
 
 export type DetailsQueryVariables = Exact<{
   address: Scalars['String'];
@@ -1825,6 +1830,70 @@ export function useCollectionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type CollectionQueryHookResult = ReturnType<typeof useCollectionQuery>;
 export type CollectionLazyQueryHookResult = ReturnType<typeof useCollectionLazyQuery>;
 export type CollectionQueryResult = Apollo.QueryResult<CollectionQuery, CollectionQueryVariables>;
+export const CollectionSearchDocument = gql`
+    query CollectionSearch($query: String!) {
+  nftCollections(filter: {nameQuery: $query}) {
+    edges {
+      cursor
+      node {
+        image {
+          url
+        }
+        isVerified
+        name
+        numAssets
+        nftContracts {
+          address
+          chain
+          name
+          symbol
+          totalSupply
+        }
+        markets(currencies: ETH) {
+          floorPrice {
+            currency
+            value
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}
+    `;
+
+/**
+ * __useCollectionSearchQuery__
+ *
+ * To run a query within a React component, call `useCollectionSearchQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCollectionSearchQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCollectionSearchQuery({
+ *   variables: {
+ *      query: // value for 'query'
+ *   },
+ * });
+ */
+export function useCollectionSearchQuery(baseOptions: Apollo.QueryHookOptions<CollectionSearchQuery, CollectionSearchQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<CollectionSearchQuery, CollectionSearchQueryVariables>(CollectionSearchDocument, options);
+      }
+export function useCollectionSearchLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CollectionSearchQuery, CollectionSearchQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<CollectionSearchQuery, CollectionSearchQueryVariables>(CollectionSearchDocument, options);
+        }
+export type CollectionSearchQueryHookResult = ReturnType<typeof useCollectionSearchQuery>;
+export type CollectionSearchLazyQueryHookResult = ReturnType<typeof useCollectionSearchLazyQuery>;
+export type CollectionSearchQueryResult = Apollo.QueryResult<CollectionSearchQuery, CollectionSearchQueryVariables>;
 export const DetailsDocument = gql`
     query Details($address: String!, $tokenId: String!) {
   nftAssets(address: $address, filter: {listed: false, tokenIds: [$tokenId]}) {
@@ -2131,7 +2200,7 @@ export type NftRouteLazyQueryHookResult = ReturnType<typeof useNftRouteLazyQuery
 export type NftRouteQueryResult = Apollo.QueryResult<NftRouteQuery, NftRouteQueryVariables>;
 export const TrendingCollectionsDocument = gql`
     query TrendingCollections($size: Int, $timePeriod: HistoryDuration) {
-  topCollections(limit: $size, duration: $timePeriod) {
+  topCollections(first: $size, duration: $timePeriod) {
     edges {
       node {
         name
