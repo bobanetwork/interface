@@ -58,6 +58,8 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   SupportedChainId.CELO,
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
+  SupportedChainId.BOBA,
+  SupportedChainId.BOBA_GOERLI,
 ] as const
 
 /**
@@ -68,6 +70,8 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_GOERLI,
+  SupportedChainId.BOBA,
+  SupportedChainId.BOBA_GOERLI,
 ] as const
 
 export const TESTNET_CHAIN_IDS = [
