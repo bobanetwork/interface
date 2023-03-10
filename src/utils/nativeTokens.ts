@@ -9,11 +9,11 @@ export function getNativeTokenDBAddress(chain: Chain): string | undefined {
   }
   switch (chain) {
     case Chain.Celo:
-    case Chain.Boba:
     case Chain.Polygon:
       return nativeOnChain(pageChainId).wrapped.address
     case Chain.Ethereum:
     case Chain.Arbitrum:
+    case Chain.Boba:
     case Chain.EthereumGoerli:
     case Chain.Optimism:
     default:
