@@ -6,7 +6,7 @@ import { isAddress } from 'utils'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import CeloLogo from '../../assets/svg/celo_logo.svg'
 import MaticLogo from '../../assets/svg/matic-token-icon.svg'
-import { isBoba, isCelo, NATIVE_CHAIN_ID, nativeOnChain } from '../../constants/tokens'
+import { isCelo, NATIVE_CHAIN_ID, nativeOnChain } from '../../constants/tokens'
 
 type Network = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon'
 
@@ -18,6 +18,10 @@ export function chainIdToNetworkName(networkId: SupportedChainId): Network {
       return 'arbitrum'
     case SupportedChainId.OPTIMISM:
       return 'optimism'
+    case SupportedChainId.BOBA:
+      return 'boba'
+    case SupportedChainId.BOBA_GOERLI:
+      return 'boba_goerli'
     case SupportedChainId.POLYGON:
       return 'polygon'
     default:
@@ -49,12 +53,6 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
   if (isCelo(chainId)) {
     if (address === nativeOnChain(chainId).wrapped.address) {
       return 'https://raw.githubusercontent.com/ubeswap/default-token-list/master/assets/asset_CELO.png'
-    }
-  }
-
-  if (isBoba(chainId)) {
-    if (address === nativeOnChain(chainId).wrapped.address) {
-      return 'https://raw.githubusercontent.com/bobanetwork/tokenlist/main/assets/boba-token.svg'
     }
   }
 }

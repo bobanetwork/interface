@@ -486,21 +486,6 @@ function getCeloNativeCurrency(chainId: number) {
   }
 }
 
-export function isBoba(chainId: number): chainId is SupportedChainId.BOBA | SupportedChainId.BOBA_GOERLI {
-  return chainId === SupportedChainId.BOBA_GOERLI || chainId === SupportedChainId.BOBA
-}
-
-function getBobaNativeCurrency(chainId: number) {
-  switch (chainId) {
-    case SupportedChainId.BOBA:
-      return ETH_BOBA
-    case SupportedChainId.BOBA_GOERLI:
-      return ETH_BOBA_GOERLI
-    default:
-      throw new Error('Not Boba network')
-  }
-}
-
 function isMatic(chainId: number): chainId is SupportedChainId.POLYGON | SupportedChainId.POLYGON_MUMBAI {
   return chainId === SupportedChainId.POLYGON_MUMBAI || chainId === SupportedChainId.POLYGON
 }
@@ -545,8 +530,6 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = new MaticNativeCurrency(chainId)
   } else if (isCelo(chainId)) {
     nativeCurrency = getCeloNativeCurrency(chainId)
-  } else if (isBoba(chainId)) {
-    nativeCurrency = getBobaNativeCurrency(chainId)
   } else {
     nativeCurrency = ExtendedEther.onChain(chainId)
   }
