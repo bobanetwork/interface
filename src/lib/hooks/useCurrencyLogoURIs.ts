@@ -18,6 +18,10 @@ export function chainIdToNetworkName(networkId: SupportedChainId): Network {
       return 'arbitrum'
     case SupportedChainId.OPTIMISM:
       return 'optimism'
+    case SupportedChainId.BOBA:
+      return 'boba'
+    case SupportedChainId.BOBA_GOERLI:
+      return 'boba_goerli'
     case SupportedChainId.POLYGON:
       return 'polygon'
     default:

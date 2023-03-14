@@ -13,6 +13,7 @@ export function getNativeTokenDBAddress(chain: Chain): string | undefined {
       return nativeOnChain(pageChainId).wrapped.address
     case Chain.Ethereum:
     case Chain.Arbitrum:
+    case Chain.Boba:
     case Chain.EthereumGoerli:
     case Chain.Optimism:
     default:

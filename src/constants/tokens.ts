@@ -109,6 +109,7 @@ export const DAI_POLYGON = new Token(
   'DAI',
   'Dai Stablecoin'
 )
+
 export const USDT_POLYGON = new Token(
   SupportedChainId.POLYGON,
   '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
@@ -144,6 +145,7 @@ export const USDT_OPTIMISM = new Token(
   'USDT',
   'Tether USD'
 )
+
 export const WBTC = new Token(
   SupportedChainId.MAINNET,
   '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
@@ -161,6 +163,13 @@ export const WBTC_ARBITRUM_ONE = new Token(
 export const WBTC_OPTIMISM = new Token(
   SupportedChainId.OPTIMISM,
   '0x68f180fcCe6836688e9084f035309E29Bf0A2095',
+  8,
+  'WBTC',
+  'Wrapped BTC'
+)
+export const WBTC_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xdc0486f8bf31DF57a952bcd3c1d3e166e3d9eC8b',
   8,
   'WBTC',
   'Wrapped BTC'
@@ -243,7 +252,9 @@ export const WETH_POLYGON = new Token(
   'WETH',
   'Wrapped Ether'
 )
+
 const CELO_CELO = new Token(SupportedChainId.CELO, '0x471EcE3750Da237f93B8E339c536989b8978a438', 18, 'CELO', 'Celo')
+
 export const CUSD_CELO = new Token(
   SupportedChainId.CELO,
   '0x765DE816845861e75A25fCA122bb6898B8B1282a',
@@ -251,6 +262,7 @@ export const CUSD_CELO = new Token(
   'cUSD',
   'Celo Dollar'
 )
+
 export const CEUR_CELO = new Token(
   SupportedChainId.CELO,
   '0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73',
@@ -258,6 +270,7 @@ export const CEUR_CELO = new Token(
   'cEUR',
   'Celo Euro Stablecoin'
 )
+
 export const PORTAL_ETH_CELO = new Token(
   SupportedChainId.CELO,
   '0x66803FB87aBd4aaC3cbB3fAd7C3aa01f6F3FB207',
@@ -272,6 +285,7 @@ export const CMC02_CELO = new Token(
   'cMCO2',
   'Celo Moss Carbon Credit'
 )
+
 const CELO_CELO_ALFAJORES = new Token(
   SupportedChainId.CELO_ALFAJORES,
   '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
@@ -279,6 +293,7 @@ const CELO_CELO_ALFAJORES = new Token(
   'CELO',
   'Celo'
 )
+
 export const CUSD_CELO_ALFAJORES = new Token(
   SupportedChainId.CELO_ALFAJORES,
   '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
@@ -286,12 +301,94 @@ export const CUSD_CELO_ALFAJORES = new Token(
   'CUSD',
   'Celo Dollar'
 )
+
 export const CEUR_CELO_ALFAJORES = new Token(
   SupportedChainId.CELO_ALFAJORES,
   '0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F',
   18,
   'CEUR',
   'Celo Euro Stablecoin'
+)
+
+export const BOBA_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xa18bF3994C0Cc6E3b63ac420308E5383f53120D7',
+  18,
+  'BOBA',
+  'Boba Token'
+)
+
+export const BOBA_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x4200000000000000000000000000000000000023',
+  18,
+  'BOBA',
+  'Boba Token'
+)
+
+export const USDT_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0x5DE1677344D3Cb0D7D465c10b72A8f60699C062d',
+  18,
+  'USDT',
+  'Tether USD'
+)
+
+export const DAI_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xf74195Bb8a5cf652411867c5C2C5b8C2a402be35',
+  18,
+  'DAI',
+  'Dai Stablecoin'
+)
+
+export const USDC_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0x66a2A913e447d6b4BF33EFbec43aAeF87890FBbc',
+  6,
+  'USDC',
+  'USD Coin'
+)
+
+export const USDC_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x429582bDe1B0E011C48d883354050938f194743F',
+  6,
+  'USDC',
+  'USD Coin'
+)
+
+export const LINK_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xD5D5030831eE83e22a2C9a5cF99931A50c676433',
+  18,
+  'LINK',
+  'ChainLink Token'
+)
+
+const ETH_BOBA = new Token(SupportedChainId.BOBA, '0x4200000000000000000000000000000000000006', 18, 'ETH', 'Ether')
+
+export const WETH_BOBA = new Token(
+  SupportedChainId.BOBA,
+  '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+
+export const WETH_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+const ETH_BOBA_GOERLI = new Token(
+  SupportedChainId.BOBA_GOERLI,
+  '0x4200000000000000000000000000000000000006',
+  18,
+  'ETH',
+  'Ether'
 )
 
 export const UNI: { [chainId: number]: Token } = {
@@ -356,6 +453,21 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     18,
     'CELO',
     'Celo native asset'
+  ),
+
+  [SupportedChainId.BOBA]: new Token(
+    SupportedChainId.BOBA,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'ETH',
+    'Ether'
+  ),
+  [SupportedChainId.BOBA_GOERLI]: new Token(
+    SupportedChainId.BOBA_GOERLI,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'ETH',
+    'Ether'
   ),
 }
 
@@ -436,5 +548,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.CELO]: PORTAL_USDC_CELO.address,
     [SupportedChainId.CELO_ALFAJORES]: PORTAL_USDC_CELO.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,
+    [SupportedChainId.BOBA]: USDC_BOBA.address,
+    [SupportedChainId.BOBA_GOERLI]: USDC_BOBA_GOERLI.address,
   },
 }

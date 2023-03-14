@@ -2,8 +2,11 @@
 import { Currency, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 
+import { USDC_BOBA_GOERLI } from './tokens'
 import {
   AMPL,
+  BOBA_BOBA,
+  BOBA_BOBA_GOERLI,
   CEUR_CELO,
   CEUR_CELO_ALFAJORES,
   CMC02_CELO,
@@ -11,12 +14,14 @@ import {
   CUSD_CELO_ALFAJORES,
   DAI,
   DAI_ARBITRUM_ONE,
+  DAI_BOBA,
   DAI_OPTIMISM,
   DAI_POLYGON,
   ETH2X_FLI,
   FEI,
   FRAX,
   FXS,
+  LINK_BOBA,
   nativeOnChain,
   PORTAL_ETH_CELO,
   PORTAL_USDC_CELO,
@@ -27,17 +32,22 @@ import {
   TRIBE,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
+  USDC_BOBA,
   USDC_MAINNET,
   USDC_OPTIMISM,
   USDC_POLYGON,
   USDT,
   USDT_ARBITRUM_ONE,
+  USDT_BOBA,
   USDT_OPTIMISM,
   USDT_POLYGON,
   WBTC,
   WBTC_ARBITRUM_ONE,
+  WBTC_BOBA,
   WBTC_OPTIMISM,
   WBTC_POLYGON,
+  WETH_BOBA,
+  WETH_BOBA_GOERLI,
   WETH_POLYGON,
   WETH_POLYGON_MUMBAI,
   WRAPPED_NATIVE_CURRENCY,
@@ -87,6 +97,8 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     WETH_POLYGON,
   ],
   [SupportedChainId.CELO]: [CUSD_CELO, CEUR_CELO, CMC02_CELO, PORTAL_USDC_CELO, PORTAL_ETH_CELO],
+  [SupportedChainId.BOBA]: [BOBA_BOBA, WETH_BOBA, WBTC_BOBA, USDT_BOBA, DAI_BOBA, USDC_BOBA, LINK_BOBA],
+  [SupportedChainId.BOBA_GOERLI]: [BOBA_BOBA_GOERLI, USDC_BOBA_GOERLI, WETH_BOBA_GOERLI],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
@@ -174,6 +186,21 @@ export const COMMON_BASES: ChainCurrencyList = {
     nativeOnChain(SupportedChainId.CELO_ALFAJORES),
     CUSD_CELO_ALFAJORES,
     CEUR_CELO_ALFAJORES,
+  ],
+  [SupportedChainId.BOBA]: [
+    nativeOnChain(SupportedChainId.BOBA),
+    WBTC_BOBA,
+    BOBA_BOBA,
+    USDT_BOBA,
+    DAI_BOBA,
+    USDC_BOBA,
+    LINK_BOBA,
+  ],
+  [SupportedChainId.BOBA_GOERLI]: [
+    nativeOnChain(SupportedChainId.BOBA_GOERLI),
+    BOBA_BOBA_GOERLI,
+    USDC_BOBA_GOERLI,
+    WETH_BOBA_GOERLI,
   ],
 }
 
