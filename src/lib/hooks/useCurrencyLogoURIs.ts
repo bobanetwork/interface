@@ -8,7 +8,7 @@ import CeloLogo from '../../assets/svg/celo_logo.svg'
 import MaticLogo from '../../assets/svg/matic-token-icon.svg'
 import { isCelo, NATIVE_CHAIN_ID, nativeOnChain } from '../../constants/tokens'
 
-type Network = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon'
+type Network = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'boba' | 'boba_goerli'
 
 export function chainIdToNetworkName(networkId: SupportedChainId): Network {
   switch (networkId) {

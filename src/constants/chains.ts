@@ -45,11 +45,11 @@ export const CHAIN_IDS_TO_NAMES = {
  * Array of all the supported chain IDs
  */
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = Object.values(SupportedChainId).filter(
-  (id) => typeof id === 'number'
+  (id) => typeof id === 'number' 
 ) as SupportedChainId[]
 
 export function isSupportedChain(chainId: number | null | undefined): chainId is SupportedChainId {
-  return !!chainId && !!SupportedChainId[chainId]
+  return !!chainId && !!SupportedChainId[chainId] 
 }
 
 export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
@@ -71,7 +71,6 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_GOERLI,
   SupportedChainId.BOBA,
-  SupportedChainId.BOBA_GOERLI,
 ] as const
 
 export const TESTNET_CHAIN_IDS = [

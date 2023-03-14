@@ -31,7 +31,6 @@ export function useUniversalRouterSwapCallback(
   options: SwapOptions
 ) {
   const { account, chainId, provider } = useWeb3React()
-
   return useCallback(async (): Promise<TransactionResponse> => {
     try {
       if (!account) throw new Error('missing account')
