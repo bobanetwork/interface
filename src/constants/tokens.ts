@@ -457,17 +457,17 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
 
   [SupportedChainId.BOBA]: new Token(
     SupportedChainId.BOBA,
-    '0x4200000000000000000000000000000000000006',
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
     18,
-    'ETH',
-    'Ether'
+    'WETH',
+    'Wrapped Ether'
   ),
   [SupportedChainId.BOBA_GOERLI]: new Token(
     SupportedChainId.BOBA_GOERLI,
-    '0x4200000000000000000000000000000000000006',
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
     18,
-    'ETH',
-    'Ether'
+    'WETH',
+    'Wrapped Ether'
   ),
 }
 
